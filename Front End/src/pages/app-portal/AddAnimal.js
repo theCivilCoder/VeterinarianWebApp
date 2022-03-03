@@ -14,7 +14,7 @@ function AddAnimal() {
 
         console.log(animalInfo);
 
-        axios.post("http://localhost:8080/app/animal/add-animal", animalInfo)
+        axios.post("http://localhost:8081/app/animal/add-animal", animalInfo)
         .then(res => {
           console.log(res);
           console.log(res.data);

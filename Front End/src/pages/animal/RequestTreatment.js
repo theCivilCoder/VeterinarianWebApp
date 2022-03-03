@@ -32,7 +32,7 @@ function RequestTreatment() {
     // Get a list of all Animal Health Technicians from the database
     function GetStaffList(){
         useEffect(()=>{
-            axios.get('http://localhost:8080/app/user/userType=Animal%20Health%20Technician').then(
+            axios.get('http://localhost:8081/app/user/userType=Animal%20Health%20Technician').then(
                 res => {
                     setStaffList(res.data)
                 })
@@ -61,7 +61,7 @@ function RequestTreatment() {
 
         axios({
             method: "post",
-            url: "http://localhost:8080/app/user/send-email/", 
+            url: "http://localhost:8081/app/user/send-email/", 
             data: formdata,
             headers: { "Content-Type": "multipart/form-data" },
           })

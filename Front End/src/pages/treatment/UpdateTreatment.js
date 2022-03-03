@@ -33,7 +33,7 @@ function ManageTreatment() {
     // Get all the treatments associated with one animal 
     function GetTreatmentForAnimal(){
         useEffect(()=>{
-            axios.get('http://localhost:8080/app/treatment/protocol/treatmentID='+treatmentID).then(
+            axios.get('http://localhost:8081/app/treatment/protocol/treatmentID='+treatmentID).then(
                 res => {
                     var singleTreatment = res.data[0]
                     setTreatment(singleTreatment.treatment)
@@ -65,7 +65,7 @@ function ManageTreatment() {
         var formattedMonth = (rightNow.getMonth()+1) < 10 ? "0" + (rightNow.getMonth()+1).toString() : (rightNow.getMonth()+1)
         var treatmentDate = rightNow.getFullYear() + "-" + formattedMonth +"-" + formattedDay + " 00:00:00"
 
-        axios.put('http://localhost:8080/app/treatment/protocol/treatmentID='+treatmentID, {
+        axios.put('http://localhost:8081/app/treatment/protocol/treatmentID='+treatmentID, {
             treatmentID: parseInt(treatmentID), 
             treatmentDate: treatmentDate,
             treatment: treatment,
@@ -95,7 +95,7 @@ function ManageTreatment() {
         document.getElementById("descriptionInput").value = ""
         document.getElementById("treatmentInput").value = ""
 
-        axios.put('http://localhost:8080/app/treatment/protocol/treatmentID='+treatmentID, {
+        axios.put('http://localhost:8081/app/treatment/protocol/treatmentID='+treatmentID, {
             treatmentID: parseInt(treatmentID), 
             treatmentDate: treatmentDate,
             treatment: treatment,

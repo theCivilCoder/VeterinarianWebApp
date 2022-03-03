@@ -13,14 +13,14 @@ export default class SearchAnimals extends Component{
     //Get all animals
     getAnimals(){
         if (this.props.query !== null){
-            axios.get('http://localhost:8080/app/animal/search?name='+this.props.query).then(
+            axios.get('http://localhost:8081/app/animal/search?name='+this.props.query).then(
                 res => {
                     console.log(res);
                     this.setState({allAvailableAnimals: res.data})
                 }
             )
         }else{
-            axios.get('http://localhost:8080/app/animal/').then(
+            axios.get('http://localhost:8081/app/animal/').then(
                 res => {
                     console.log(res);
                     this.setState({allAvailableAnimals: res.data})

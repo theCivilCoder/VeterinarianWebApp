@@ -34,7 +34,7 @@ function ManageDiagnosis() {
     // Get a specific diagnoses from the database
     function GetDiagnosisForAnimal(){
         useEffect(()=>{
-            axios.get('http://localhost:8080/app/treatment/diagnosis/diagnosisID='+diagnosisID).then(
+            axios.get('http://localhost:8081/app/treatment/diagnosis/diagnosisID='+diagnosisID).then(
                 res => {
                     var singleDiagnosis = res.data[0]
                     setDiagnosis(singleDiagnosis.diagnosis)
@@ -67,7 +67,7 @@ function ManageDiagnosis() {
         var diagnosisDate = rightNow.getFullYear() + "-" + formattedMonth +"-" + formattedDay + " 00:00:00"
 
         // Update the database with new information
-        axios.put('http://localhost:8080/app/treatment/diagnosis/diagnosisID='+diagnosisID, {
+        axios.put('http://localhost:8081/app/treatment/diagnosis/diagnosisID='+diagnosisID, {
             diagnosisID: parseInt(diagnosisID),
             diagnosisDate: diagnosisDate,
             diagnosis: diagnosis,
@@ -98,7 +98,7 @@ function ManageDiagnosis() {
         document.getElementById("descriptionInput").value = ""
         document.getElementById("diagnosisInput").value = ""
 
-        axios.put('http://localhost:8080/app/treatment/diagnosis/diagnosisID='+diagnosisID, {
+        axios.put('http://localhost:8081/app/treatment/diagnosis/diagnosisID='+diagnosisID, {
             diagnosisID: parseInt(diagnosisID),
             diagnosis: diagnosis,
             description: description,

@@ -53,7 +53,7 @@ function RequestAnimal() {
         var formattedReturnDate =returnDate.getFullYear() + "-" + returnMonth +"-" + returnDay + " 00:00:00"
 
         // Add the request into the database with the "Pending" status
-        axios.post('http://localhost:8080/app/request/', {
+        axios.post('http://localhost:8081/app/request/', {
             animalID: parseInt(animalID),
             requestID: null, //dummy, backend assigns a new requestID
             requesterID: parseInt(requesterID),

@@ -14,7 +14,7 @@ export default class RemindersList extends Component{
     //get all the reminders for one animal
     componentDidMount(){
         console.log(this.state.toggleStudent)
-        axios.get('http://localhost:8080/app/reminders/animal/'+this.state.animalID).then(
+        axios.get('http://localhost:8081/app/reminders/animal/'+this.state.animalID).then(
             res => {
                 console.log(res);
                 this.setState({reminders: res.data})
@@ -28,7 +28,7 @@ export default class RemindersList extends Component{
         var currReminderID = event.target.getAttribute('reminderid')
         // console.log(event.target.getAttribute('reminderID'))
 
-        axios.delete('http://localhost:8080/app/reminders/'+ currReminderID)
+        axios.delete('http://localhost:8081/app/reminders/'+ currReminderID)
         .catch(err =>{
             console.log(err)
         })

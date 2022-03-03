@@ -10,7 +10,7 @@ function BlockUser() {
     // Sends request to block a user in the database
     function handleSubmit(event) {
         event.preventDefault();
-        axios.put("http://localhost:8080/app/user/block-user/" + userId);
+        axios.put("http://localhost:8081/app/user/block-user/" + userId);
 
         alert("User blocked")
         window.location.reload()

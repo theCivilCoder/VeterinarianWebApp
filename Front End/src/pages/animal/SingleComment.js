@@ -19,7 +19,7 @@ function SingleComment() {
     function GetPhotosForAnimal(){
 
         useEffect(()=>{
-            axios.get('http://localhost:8080/app/comments/'+commentID).then(
+            axios.get('http://localhost:8081/app/comments/'+commentID).then(
                 res => {
                     console.log(res);
                     console.log("list of comments.length = "+res.data.length)
@@ -50,7 +50,7 @@ function SingleComment() {
     function handleDelete(event) {
         event.preventDefault();
 
-        axios.delete('http://localhost:8080/app/comments/'+  singleComment.commentID)
+        axios.delete('http://localhost:8081/app/comments/'+  singleComment.commentID)
         .catch(err =>{
             console.log(err)
         })

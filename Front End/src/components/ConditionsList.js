@@ -13,7 +13,7 @@ export default class ConditionsList extends Component{
 
     // get all the diagnoses associated with an animal
     componentDidMount(){
-        axios.get('http://localhost:8080/app/treatment/diagnosis/animalID='+this.state.animalID).then(
+        axios.get('http://localhost:8081/app/treatment/diagnosis/animalID='+this.state.animalID).then(
             res => {
                 this.setState({diagnosisList: res.data})
             }
@@ -35,7 +35,7 @@ export default class ConditionsList extends Component{
         var formattedMonth = (rightNow.getMonth()+1) < 10 ? "0" + (rightNow.getMonth()+1).toString() : (rightNow.getMonth()+1)
         var diagnosisDate = rightNow.getFullYear() + "-" + formattedMonth +"-" + formattedDay + " 00:00:00"
 
-        axios.put('http://localhost:8080/app/treatment/diagnosis/diagnosisID='+diagnosis.diagnosisID, {
+        axios.put('http://localhost:8081/app/treatment/diagnosis/diagnosisID='+diagnosis.diagnosisID, {
             diagnosisID: parseInt(diagnosis.diagnosisID), 
             diagnosisDate: diagnosisDate,
             diagnosis: diagnosis.diagnosis,

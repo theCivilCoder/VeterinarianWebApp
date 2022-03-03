@@ -18,7 +18,7 @@ export default class RequestViewByTeachingTechnician extends Component{
     //get all requests that the teaching technician submitted
     componentDidMount(){
         // console.log(this.state.toggleStudent)
-        axios.get('http://localhost:8080/app/request/user/'+this.requesterID).then(
+        axios.get('http://localhost:8081/app/request/user/'+this.requesterID).then(
             res => {
                 console.log(res);
                 this.setState({allRequests: res.data})
@@ -32,7 +32,7 @@ export default class RequestViewByTeachingTechnician extends Component{
         console.log("request.requestID = " + arrData[this.idxReq.requestID])
         console.log("request.requestStatus  = " + arrData[this.idxReq.requestStatus ])
     
-        axios.put('http://localhost:8080/app/request/'+arrData[this.idxReq.requestID], {
+        axios.put('http://localhost:8081/app/request/'+arrData[this.idxReq.requestID], {
                 animalID : parseInt( arrData[this.idxReq.animalID]),
                 requestID : parseInt( arrData[this.idxReq.requestID]),
                 requesterID : parseInt( arrData[this.idxReq.requesterID]),

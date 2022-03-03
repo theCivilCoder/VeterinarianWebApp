@@ -12,8 +12,8 @@ export default class PhotosList extends Component{
     //Get all the photos for one animal
     componentDidMount(){
         console.log(this.state.animalID)
-        console.log('http://localhost:8080/app/photos/animal/'+this.state.animalID)
-        axios.get('http://localhost:8080/app/photos/animal/'+this.state.animalID).then(
+        console.log('http://localhost:8081/app/photos/animal/'+this.state.animalID)
+        axios.get('http://localhost:8081/app/photos/animal/'+this.state.animalID).then(
             res => {
                 console.log(res);
                 this.setState({photoPaths: res.data})

@@ -14,7 +14,7 @@ export default class TreatmentsList extends Component{
 
     // Get all the treatments associated with an animal from the database
     componentDidMount(){
-        axios.get('http://localhost:8080/app/treatment/protocol/animalID='+this.state.animalID).then(
+        axios.get('http://localhost:8081/app/treatment/protocol/animalID='+this.state.animalID).then(
             res => {
                 this.setState({treatmentList: res.data})
             }
@@ -35,7 +35,7 @@ export default class TreatmentsList extends Component{
         var formattedMonth = (rightNow.getMonth()+1) < 10 ? "0" + (rightNow.getMonth()+1).toString() : (rightNow.getMonth()+1)
         var treatmentDate = rightNow.getFullYear() + "-" + formattedMonth +"-" + formattedDay + " 00:00:00"
 
-        axios.put('http://localhost:8080/app/treatment/protocol/treatmentID='+treatment.treatmentID, {
+        axios.put('http://localhost:8081/app/treatment/protocol/treatmentID='+treatment.treatmentID, {
             treatmentID: parseInt(treatment.treatmentID), 
             treatmentDate: treatmentDate,
             treatment: treatment.treatment,

@@ -12,7 +12,7 @@ function AddUser() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        axios.post("http://localhost:8080/app/user/add-user", userInfo)
+        axios.post("http://localhost:8081/app/user/add-user", userInfo)
         .then(res => {
           console.log(res);
           console.log(res.data);

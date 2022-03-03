@@ -13,7 +13,7 @@ export default class StaffList extends Component{
 
     // Gets a list of Animal Health Technicians
     componentDidMount(){
-        axios.get('http://localhost:8080/app/user/userType=Animal%20Health%20Technician').then(
+        axios.get('http://localhost:8081/app/user/userType=Animal%20Health%20Technician').then(
             res => {
                 this.setState({staffList: res.data})
             }

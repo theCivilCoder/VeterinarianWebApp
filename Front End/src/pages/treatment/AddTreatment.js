@@ -50,7 +50,7 @@ function AddTreatment() {
         var formattedMonth = (rightNow.getMonth()+1) < 10 ? "0" + (rightNow.getMonth()+1).toString() : (rightNow.getMonth()+1)
         var treatmentDate = rightNow.getFullYear() + "-" + formattedMonth +"-" + formattedDay + " 00:00:00"
 
-        axios.post('http://localhost:8080/app/treatment/protocol/animalID=' + animalID, {
+        axios.post('http://localhost:8081/app/treatment/protocol/animalID=' + animalID, {
             treatmentID: null, //dummy, backend assigns a new treamentID
             treatmentDate: treatmentDate,
             treatment: treatment,

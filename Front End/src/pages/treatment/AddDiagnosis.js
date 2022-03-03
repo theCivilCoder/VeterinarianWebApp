@@ -51,7 +51,7 @@ function AddDiagnosis() {
         var diagnosisDate = rightNow.getFullYear() + "-" + formattedMonth +"-" + formattedDay + " 00:00:00"
 
 
-        axios.post('http://localhost:8080/app/treatment/diagnosis/animalID=' + animalID, {
+        axios.post('http://localhost:8081/app/treatment/diagnosis/animalID=' + animalID, {
             diagnosisID: null, //dummy, backend assigns a new diagnosisID
             diagnosisDate: diagnosisDate,
             diagnosis: diagnosis,

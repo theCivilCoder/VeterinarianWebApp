@@ -15,7 +15,7 @@ export default class CommentsList extends Component{
     //get all comments for one animal
     componentDidMount(){
         console.log(this.state.toggleStudent)
-        axios.get('http://localhost:8080/app/comments/animal/'+this.state.animalID).then(
+        axios.get('http://localhost:8081/app/comments/animal/'+this.state.animalID).then(
             res => {
                 console.log(res);
                 this.setState({comments: res.data})

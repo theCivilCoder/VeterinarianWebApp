@@ -19,7 +19,7 @@ function EditUser() {
     // Sends a request to search for a user in the database
     function handleSearch(event) {
         event.preventDefault();
-        axios.get("http://localhost:8080/app/user/edit-user/" + userId)
+        axios.get("http://localhost:8081/app/user/edit-user/" + userId)
         .then(res => {
             const info = res.data;
 
@@ -44,7 +44,7 @@ function EditUser() {
     function handleSubmit(event) {
         event.preventDefault();
         
-        axios.put("http://localhost:8080/app/user/edit-user/" + userId, { id: userId, firstName: firstName, lastName: lastName,
+        axios.put("http://localhost:8081/app/user/edit-user/" + userId, { id: userId, firstName: firstName, lastName: lastName,
                                                                           username: username, password: password, 
                                                                           userType: position, email: email, phoneNum: phoneNum, 
                                                                           startDate: startDate, activeStatus: activeStatus})

@@ -28,7 +28,7 @@ function AddReminder() {
         today = yyyy + '-' + mm + '-' + dd  ;
 
         //add reminder to the database
-        axios.post('http://localhost:8080/app/reminders/', {
+        axios.post('http://localhost:8081/app/reminders/', {
           animalID:  parseInt(localStorage.getItem('animalID')),
           reminderID: 1, //dummy value which will be updated in the backend
           dateCreated: today.toString(),

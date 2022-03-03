@@ -15,7 +15,7 @@ export default class RequestViewByHealthTechnician extends Component{
     //get all the requests
     componentDidMount(){
         console.log(this.state.toggleStudent)
-        axios.get('http://localhost:8080/app/request/').then(
+        axios.get('http://localhost:8081/app/request/').then(
             res => {
                 console.log(res);
                 this.setState({allRequests: res.data})
@@ -29,7 +29,7 @@ export default class RequestViewByHealthTechnician extends Component{
         console.log("request.requestID = " + arrData[this.idxReq.requestID])
         console.log("request.requestStatus  = " + arrData[this.idxReq.requestStatus ])
     
-        axios.put('http://localhost:8080/app/request/'+arrData[this.idxReq.requestID], {
+        axios.put('http://localhost:8081/app/request/'+arrData[this.idxReq.requestID], {
                 animalID : parseInt( arrData[this.idxReq.animalID]),
                 requestID : parseInt( arrData[this.idxReq.requestID]),
                 requesterID : parseInt( arrData[this.idxReq.requesterID]),
@@ -55,7 +55,7 @@ export default class RequestViewByHealthTechnician extends Component{
         console.log("request.requestID = " + arrData[this.idxReq.requestID])
         console.log("request.requestStatus  = " + arrData[this.idxReq.requestStatus ])
     
-        axios.put('http://localhost:8080/app/request/'+arrData[this.idxReq.requestID], {
+        axios.put('http://localhost:8081/app/request/'+arrData[this.idxReq.requestID], {
                 animalID : parseInt( arrData[this.idxReq.animalID]),
                 requestID : parseInt( arrData[this.idxReq.requestID]),
                 requesterID : parseInt( arrData[this.idxReq.requesterID]),

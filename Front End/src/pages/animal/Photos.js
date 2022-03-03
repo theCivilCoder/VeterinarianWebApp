@@ -21,7 +21,7 @@ function Photos() {
     function GetPhotosForAnimal(){
 
         useEffect(()=>{
-            axios.get('http://localhost:8080/app/photos/animal/'+animalID).then(
+            axios.get('http://localhost:8081/app/photos/animal/'+animalID).then(
                 res => {
                     console.log(res);
                     setAnimalPhotos(res.data);
@@ -57,7 +57,7 @@ function Photos() {
 
         var selectedPhotos = Object.keys(photoIDs).filter((x) => photoIDs[x])
         selectedPhotos.map((photoName) => {
-            axios.delete('http://localhost:8080/app/photos/'+photoName.replace("Photo",""))
+            axios.delete('http://localhost:8081/app/photos/'+photoName.replace("Photo",""))
             .catch(err =>{
                 console.log(err)
             })
@@ -86,7 +86,7 @@ function Photos() {
 
         axios({
             method: "post",
-            url: "http://localhost:8080/app/photos/animal/"+animalID+"/uploadphoto/", 
+            url: "http://localhost:8081/app/photos/animal/"+animalID+"/uploadphoto/", 
             data: formdata,
             headers: { "Content-Type": "multipart/form-data" },
           })

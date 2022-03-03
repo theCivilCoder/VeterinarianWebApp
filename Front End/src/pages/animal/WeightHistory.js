@@ -18,7 +18,7 @@ function WeightHistory() {
 
     // Retrieves the weight history of the selected animal
     useEffect(() => {
-        axios.get("http://localhost:8080/app/animal/weight-history/"+animalID)
+        axios.get("http://localhost:8081/app/animal/weight-history/"+animalID)
            .then(res => {
                 const weightEntries = res.data;
                 setWeightHistory([weightEntries]);
@@ -43,7 +43,7 @@ function WeightHistory() {
 
     function onDelete(index) {
         // console.log({animalId: animalID, date: weightHistory[0][index].date, weight: weightHistory[0][index].weight});
-        axios.delete("http://localhost:8080/app/animal/weight-history", {data: {animalId: animalID, 
+        axios.delete("http://localhost:8081/app/animal/weight-history", {data: {animalId: animalID, 
                                                                          date: weightHistory[0][index].date,
                                                                          weight: weightHistory[0][index].weight,
                                                                          userId: weightHistory[0][index].userId}})
@@ -60,7 +60,7 @@ function WeightHistory() {
     function handleSubmit(event) {
         event.preventDefault();
 
-        axios.post("http://localhost:8080/app/animal/weight-history", { animalId: animalID, date: date, weight: weight, userId: 1 })
+        axios.post("http://localhost:8081/app/animal/weight-history", { animalId: animalID, date: date, weight: weight, userId: 1 })
         .then(res => {
           console.log(res);
           console.log(res.data);

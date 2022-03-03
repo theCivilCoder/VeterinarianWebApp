@@ -18,7 +18,7 @@ const Login = () => {
         event.preventDefault();
 
         //get the jwt token and save it in local storage
-        axios.get('http://localhost:8080/app/authenticate/', {params: { 
+        axios.get('http://localhost:8081/app/authenticate/', {params: { 
             userName: usernameEntered,
             password: passwordEntered
             }}).then(
@@ -42,7 +42,7 @@ const Login = () => {
 
 
 
-        axios.get('http://localhost:8080/app/login/', {params: { 
+        axios.get('http://localhost:8081/app/login/', {params: { 
             userName: usernameEntered,
             password: passwordEntered
             }}).then(

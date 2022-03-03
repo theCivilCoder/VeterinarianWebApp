@@ -35,7 +35,7 @@ function AnimalInfo() {
     // Loads the existing animal data
     function loadData() {
         if (isLoading) {
-            axios.get("http://localhost:8080/app/animal/" + animalID)
+            axios.get("http://localhost:8081/app/animal/" + animalID)
             .then(res => {
                 const info = res.data;
 
@@ -66,7 +66,7 @@ function AnimalInfo() {
     function handleSubmit(event) {
         event.preventDefault();
         
-        axios.put("http://localhost:8080/app/animal/" + animalID, { name: name, species: species, breed: breed, tattoo: tattoo, 
+        axios.put("http://localhost:8081/app/animal/" + animalID, { name: name, species: species, breed: breed, tattoo: tattoo, 
                                                                     cityTattoo: cityTattoo, dob: dob, sex: sex, rfid: rfid,
                                                                     microchip: microchip, healthStatus: healthStatus,
                                                                     availabilityStatus: availabilityStatus, colour: colour,

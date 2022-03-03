@@ -73,7 +73,7 @@ function Comments() {
         var formattedMinutes = rightNow.getMinutes() < 10 ? "0"+rightNow.getMinutes().toString() : rightNow.getMinutes().toString()
         var dateTime = rightNow.getFullYear() + "-" + formatedMonth +"-" + formatedDay +" "+ hours12 +":"+ formattedMinutes +" "+ AMPM
 
-        axios.post('http://localhost:8080/app/comments/', {
+        axios.post('http://localhost:8081/app/comments/', {
           animalID:  parseInt(animalID),
           commentID: commentID,
           authorID:  parseInt(authorID),
