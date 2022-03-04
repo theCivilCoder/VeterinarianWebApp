@@ -53,8 +53,9 @@ export default class CommentsList extends Component{
                 (comment.userType === "Student" ) ?
                 //If toggle students is on then no student comments are displayed
                 (this.state.toggleStudent ?
-                <div className="card text-white bg-warning mx-5 my-3" key={comment.commentId} style={{width: "50rem"}}>
-                    <div className="card-header" >
+                // <div className="card text-white bg-warning mx-2 my-3" key={comment.commentId} style={{width: "50rem", borderRadius: "25px"}}>
+                <div className="card text-white bg-primary mx-2 my-3" key={comment.commentId} style={{width: "50rem", borderRadius: "25px"}}>
+                    <div className="card-header text-white"  style={{borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}>
                         {this.cardLink2(comment)}
                     </div>
                     <div className="card-body"  >
@@ -66,19 +67,21 @@ export default class CommentsList extends Component{
                         </p>
                     </div>
                 </div>:null):
-                <div className="card bg-light mx-5 my-3" key={comment.commentID} style={{width: "50rem"}}>
-                <div className="card-header" >
-                    {this.cardLink2(comment)}
-                </div>
-                <div className="card-body"  >
-                    <p className="card-text">
-                        {comment.message}
-                    </p>
-                    <p className="card-text">
-                        <small className="text-muted">{comment.timestamp}</small>
-                    </p>
-                </div>
-            </div>
+                <div className="card bg-light mx-2 my-3" key={comment.commentID} style={{width: "50rem", borderRadius: "25px", float:"right"}}>
+                    {/* <div className="card bg-light mx-2 my-3" key={comment.commentID} style={{width: "50rem", borderRadius: "25px"}}> */}
+                        <div className="card-header" style={{borderTopLeftRadius: "25px", borderTopRightRadius: "25px"}}>
+                            {this.cardLink2(comment)}
+                        </div>
+                        <div className="card-body"  >
+                            <p className="card-text">
+                                {comment.message}
+                            </p>
+                            <p className="card-text">
+                                <small className="text-muted">{comment.timestamp}</small>
+                            </p>
+                        </div>
+                    </div>
+                
 
                 )
             }

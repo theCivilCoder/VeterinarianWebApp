@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Sidebar from '../../components/Sidebar';
 import AnimalNavbar from '../../components/AnimalNavbar';
+import { FaCamera} from "react-icons/fa";
+
 
 import axios from 'axios';
 import '../../styling/Comments.css';
@@ -9,6 +11,7 @@ import React, {useState} from 'react'
 import {useLocation, useNavigate} from 'react-router-dom'
 
 import jwt_decode from "jwt-decode";
+import { IconContext } from 'react-icons/lib';
 
 
 
@@ -136,9 +139,16 @@ function Comments() {
             <div class="ex1">
             <CommentsList animalID={animalID} toggleStudent={showStudents} usertype={activeUserType} />
             </div>
-            <label className="d-flex flex-row custom-field">
-                <input className="form-control" id="commentInput" type="text" required onChange={getData} onKeyDown={handleKeyDown} size="100" placeholder="Enter a message" />
-                <button className="btn btn-secondary ms-2" onClick={clickButton}>Submit</button>
+            <label className="d-flex flex-row custom-field input-field">
+                <IconContext.Provider value={{className:'camera-icon'}}>
+                    <div className="cam-wrapper">
+                      <FaCamera title="Attach a Photo"/>
+                    </div>
+
+                </IconContext.Provider>
+                <input className="form-control mx-3 my-2" id="commentInput" type="text" required onChange={getData} onKeyDown={handleKeyDown} size="100" placeholder="Enter a message" />
+                {/* <button className="btn btn-secondary ms-2" onClick={clickButton}>Submit</button> */}
+                <button className="btn btn-secondary mx-2 my-2" type="submit" onClick={clickButton}>Send</button>
             </label>
         </div>
         </div>
